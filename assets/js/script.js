@@ -12,22 +12,21 @@ const hourEl = [
   $("#fifteen"), $("#sixteen"), $("#seventeen")
 ];
 const workHours = [
-  "9", "10", "11",
-  "12", "13", "14",
-  "15", "16", "17"
-]
+  9, 10, 11,
+  12, 13, 14,
+  15, 16, 17
+];
 
 // Time and Date in the header of the application
 function timeIs(format, time) {
   return dayjs(time).format(format)
 };
-function textIs(element, content) {
-  return element.text(content)  
-};
-textIs(currentDay, timeIs(date));
-textIs(currentHour, timeIs(hour));
+currentDay.text(timeIs(date));
+currentHour.text(timeIs(hour));
 
 // Workday Hours
-function hourIs(time, min, format, date) {
-  return dayjs(date).hour(time).minute(min).format(format)
+
+for (let i = 0; i < hourEl.length; i++) {
+  let hourIS = dayjs().hour(workHours[i]).minute(0).format(hour)
+  textIs(hourEl[i], hourIS)
 }

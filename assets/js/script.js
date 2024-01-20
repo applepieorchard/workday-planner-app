@@ -25,8 +25,7 @@ currentDay.text(timeIs(date));
 currentHour.text(timeIs(hour));
 
 // Workday Hours
-
 for (let i = 0; i < hourEl.length; i++) {
   let hourIS = dayjs().hour(workHours[i]).minute(0).format(hour)
-  textIs(hourEl[i], hourIS)
+  hourEl[i].text(hourIS)
 }

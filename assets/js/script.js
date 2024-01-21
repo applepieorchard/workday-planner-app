@@ -1,18 +1,23 @@
 // Advanced Format plugin, using for ordinals
 dayjs.extend(window.dayjs_plugin_advancedFormat);
 
-// Queries
+// Query Selectors
 const currentDay = $("#currentDay");
 const currentHour = $("#currentHour");
 const hourEl = [
-  $("#nine"), $("#ten"), $("#eleven"),
-  $("#twelve"), $("#thirteen"), $("#fourteen"),
-  $("#fifteen"), $("#sixteen"), $("#seventeen")
+  $("#nine .hour"), $("#ten .hour"), $("#eleven .hour"),
+  $("#twelve .hour"), $("#thirteen .hour"), $("#fourteen .hour"),
+  $("#fifteen .hour"), $("#sixteen .hour"), $("#seventeen .hour")
 ];
-const userInput = [
-  $("#timeBlockOne"), $("#timeBlockTwo"), $("#timeBlockThree"),
-  $("#timeBlockFour"), $("#timeBlockFive"), $("#timeBlockSix"),
-  $("#timeBlockSeven"), $("#timeBlockEight"), $("#timeBlockNine")
+const timeBlocks = [
+  $("#nine .timeBlock input"), $("#ten .timeBlock input"), $("#eleven .timeBlock input"),
+  $("#twelve .timeBlock input"), $("#thirteen .timeBlock input"), $("#fourteen .timeBlock input"),
+  $("#fifteen .timeBlock input"), $("#sixteen .timeBlock input"), $("#seventeen .timeBlock input")
+];
+const saveButtons = [
+  $("#nine .saveBtn"), $("#ten .saveBtn"), $("#eleven .saveBtn"),
+  $("#twelve .saveBtn"), $("#thirteen .saveBtn"), $("#fourteen .saveBtn"),
+  $("#fifteen .saveBtn"), $("#sixteen .saveBtn"), $("#seventeen .saveBtn")
 ];
 
 // Variables

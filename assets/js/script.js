@@ -1,9 +1,7 @@
 // Advanced Format plugin, using for ordinals
 dayjs.extend(window.dayjs_plugin_advancedFormat);
 
-// Global Variables
-var date = "dddd [the] Do [of] MMMM, YYYY";
-var hour = "HH:mm";
+// Queries
 const currentDay = $("#currentDay");
 const currentHour = $("#currentHour");
 const hourEl = [
@@ -11,6 +9,15 @@ const hourEl = [
   $("#twelve"), $("#thirteen"), $("#fourteen"),
   $("#fifteen"), $("#sixteen"), $("#seventeen")
 ];
+const userInput = [
+  $("#timeBlockOne"), $("#timeBlockTwo"), $("#timeBlockThree"),
+  $("#timeBlockFour"), $("#timeBlockFive"), $("#timeBlockSix"),
+  $("#timeBlockSeven"), $("#timeBlockEight"), $("#timeBlockNine")
+];
+
+// Variables
+var date = "dddd [the] Do [of] MMMM, YYYY";
+var hour = "HH:mm";
 const workHours = [
   9, 10, 11,
   12, 13, 14,
@@ -28,4 +35,6 @@ currentHour.text(timeIs(hour));
 for (let i = 0; i < hourEl.length; i++) {
   let hourIS = dayjs().hour(workHours[i]).minute(0).format(hour)
   hourEl[i].text(hourIS)
-}
+};
+
+// Saving user input

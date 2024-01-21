@@ -28,6 +28,11 @@ const workHours = [
   12, 13, 14,
   15, 16, 17
 ];
+const diaries = [
+  "diaryNine", "diaryTen", "diaryEleven",
+  "diaryTwelve", "diaryThirteen", "diaryFourteen",
+  "diaryFifteen", "diarySixteen", "diarySeventeen"
+]
 
 // Time and Date in the header of the application
 function timeIs(format, time) {
@@ -42,4 +47,12 @@ for (let i = 0; i < hourEl.length; i++) {
   hourEl[i].text(hourIS)
 };
 
-// Saving user input
+// Local Storage
+for (let i = 0; i < diaries.length; i++) {
+  var diaryEntry = localStorage.getItem(diaries[i]);
+  timeBlocks[i].val(diaryEntry);
+  saveButtons[i].click(function() {
+    var input = timeBlocks[i].val();
+    return localStorage.setItem(diaries[i], input)
+  })
+}

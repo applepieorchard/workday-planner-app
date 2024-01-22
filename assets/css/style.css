@@ -1,7 +1,13 @@
+::selection {
+  background-color: #E0279D;
+  color: #ECFFF8;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: #313338;
 }
 
 textarea {
@@ -15,18 +21,25 @@ textarea {
 
 header {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-color: #2B2D31;
+  color: #949BA4;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid #1E1F22;
   padding: 20px;
   margin-bottom: 10px;
 }
+header h1 {
+  color: #F2F3F5;
+}
+
+header h3 {
+  color: #e0279d;
+}
 
 footer {
-  color: black;
+  background-color: #2B2D31;
   border-radius: 0;
-  border-top: 10px solid black;
+  border-top: 10px solid #1E1F22;
   padding: 20px;
   margin-top: 10px;
 }
@@ -40,7 +53,8 @@ footer {
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;
+  border-top: 5px solid #313338;
+;
 }
 
 .description {
@@ -49,8 +63,9 @@ footer {
 
 .timeBlock {
   display: flex;
-  border-radius: 15px;
   width: 80%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .timeBlock input {
@@ -58,38 +73,41 @@ footer {
   border-color: transparent;
   background-color: transparent;
   color: inherit;
+  font-weight: inherit;
 }
 
 .hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+  background-color: #313338;
+  color: #e0279d;
+  border-top: 1px dashed #F2F3F5;
   width: 10%;
   text-align: right;
   padding-top: 30px;
+  font-weight: bold;
 }
 
 .past {
-  background-color: #d3d3d3;
-  color: white;
+  background-color: #563C5C;
+  color: #F2F3F5;
 }
 
 .present {
-  background-color: #ff6961;
-  color: white;
+  background-color: #e0279d;
+  color: #F2F3F5;
+  font-weight: bold;
 }
 
 .future {
-  background-color: #77dd77;
-  color: white;
+  background-color: #D5A18E;
+  color: #F2F3F5;
 }
 
 .saveBtn {
-  border-left: 1px solid black;
+  border: transparent;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
-  color: white;
+  background-color: #1E1F22;
+  color: #e0279d;
   width: 10%;
   font-size: 15px;
 }

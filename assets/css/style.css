@@ -57,6 +57,7 @@ footer {
   width: 100%;
   border-color: transparent;
   background-color: transparent;
+  color: inherit;
 }
 
 .hour {

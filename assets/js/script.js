@@ -20,9 +20,9 @@ const saveButtons = [
   $("#fifteen .saveBtn"), $("#sixteen .saveBtn"), $("#seventeen .saveBtn")
 ];
 const timeBlockBg = [
-    $("#nine .timeBlock"), $("#ten .timeBlock"), $("#eleven .timeBlock"),
-    $("#twelve .timeBlock"), $("#thirteen .timeBlock"), $("#fourteen .timeBlock"),
-    $("#fifteen .timeBlock"), $("#sixteen .timeBlock"), $("#seventeen .timeBlock")
+  $("#nine .timeBlock"), $("#ten .timeBlock"), $("#eleven .timeBlock"),
+  $("#twelve .timeBlock"), $("#thirteen .timeBlock"), $("#fourteen .timeBlock"),
+  $("#fifteen .timeBlock"), $("#sixteen .timeBlock"), $("#seventeen .timeBlock")
 ];
 
 // Variables
@@ -37,7 +37,8 @@ const diaries = [
   "diaryNine", "diaryTen", "diaryEleven",
   "diaryTwelve", "diaryThirteen", "diaryFourteen",
   "diaryFifteen", "diarySixteen", "diarySeventeen"
-]
+];
+const currently = dayjs().startOf("h").format("HH:mm");
 
 // Time and Date in the header of the application
 function timeIs(format, time) {
@@ -62,8 +63,7 @@ for (let i = 0; i < diaries.length; i++) {
   })
 }
 
-const currently = dayjs().startOf("h").format("HH:mm")
-
+// Timeblock Colouring
 for (let i = 0; i < timeBlockBg.length; i++) {
   if (currently === hourEl[i].text()) {
     timeBlockBg[i].addClass("present").removeClass("past future")

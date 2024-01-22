@@ -19,6 +19,11 @@ const saveButtons = [
   $("#twelve .saveBtn"), $("#thirteen .saveBtn"), $("#fourteen .saveBtn"),
   $("#fifteen .saveBtn"), $("#sixteen .saveBtn"), $("#seventeen .saveBtn")
 ];
+const timeBlockBg = [
+    $("#nine .timeBlock"), $("#ten .timeBlock"), $("#eleven .timeBlock"),
+    $("#twelve .timeBlock"), $("#thirteen .timeBlock"), $("#fourteen .timeBlock"),
+    $("#fifteen .timeBlock"), $("#sixteen .timeBlock"), $("#seventeen .timeBlock")
+];
 
 // Variables
 var date = "dddd [the] Do [of] MMMM, YYYY";
@@ -55,4 +60,16 @@ for (let i = 0; i < diaries.length; i++) {
     var input = timeBlocks[i].val();
     return localStorage.setItem(diaries[i], input)
   })
+}
+
+const currently = dayjs().startOf("h").format("HH:mm")
+
+for (let i = 0; i < timeBlockBg.length; i++) {
+  if (currently === hourEl[i].text()) {
+    timeBlockBg[i].addClass("present").removeClass("past future")
+  } else if (currently > hourEl[i].text()) {
+    timeBlockBg[i].addClass("past").removeClass("present future")
+  } else if (currently < hourEl[i].text()) {
+    timeBlockBg[i].addClass("future").removeClass("past present")
+  }
 }
